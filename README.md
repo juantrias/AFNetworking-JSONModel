@@ -2,47 +2,47 @@ AFNetworking-JSONModel
 ======================
 This is a tiny AFNetworking (https://github.com/AFNetworking/AFNetworking) extension to simplify the integration with the JSONModel parsing library (https://github.com/icanzilb/JSONModel).
 
-In every service we pass to our AFHtpCLient.. category the JSONModel class we expect to receive as the API response. Any other response is automatically redirected to the same error callback we use for networking errors, so we move away the JSON error control code from every ApiClient service, making it generic.
+In every service we pass to our AFHTTPRequestOperationManager+JsonModelRequestOperationManager category the JSONModel class we expect to receive as the API response. Any other response is automatically redirected to the same error callback we use for networking errors, so we move away the JSON error control code from every ApiClient service, making it generic.
 
 Initialize the AFHTTPRequestOperationManager:
-````
-    // We can save the AFHTTPRequestOperationManager instance in a Singleton to reuse it in other services
-    NSURL *baseUrl = [NSURL URLWithString:@"http://www.my-service.com/api/"];
-    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseUrl];
+````objective-c
+// We can save the AFHTTPRequestOperationManager instance in a Singleton to reuse it in other services
+NSURL *baseUrl = [NSURL URLWithString:@"http://www.my-service.com/api/"];
+AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseUrl];
     
 ````
 
 Calling the /projects service without AFNetworking+JSONModel:
-````
-  // ProjectListDto is a JSONModel subclass representing the expected JSON from the service
-    [manager GET:@"/projects" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+````objective-c
+// ProjectListDto is a JSONModel subclass representing the expected JSON from the service
+[manager GET:@"/projects" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        NSError *jsonParsingError;
-        ProjectListDto *projectListDto = [[ProjectListDto alloc] initWithString:operation.responseString usingEncoding:NSUTF8StringEncoding error:&jsonParsingError];
-        if (jsonParsingError) {
-            // ... custom error handling ...
-            onError(jsonParsingError);
-            return;
-        }
+    NSError *jsonParsingError;
+    ProjectListDto *projectListDto = [[ProjectListDto alloc] initWithString:operation.responseString usingEncoding:NSUTF8StringEncoding error:&jsonParsingError];
+    if (jsonParsingError) {
+        // ... custom error handling ...
+        onError(jsonParsingError);
+        return;
+    }
         
-        onComplete(projectListDto);
+    onComplete(projectListDto);
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        onError(error);
-    }];
+} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    onError(error);
+}];
 ````
 
 Calling the /projects service with AFNetworking+JSONModel:
-````
-    // ProjectListDto is a JSONModel subclass representing the expected JSON from the service
-    [manager GET:@"/projects" parameters:nil class:[ProjectListDto class] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+````objective-c
+// ProjectListDto is a JSONModel subclass representing the expected JSON from the service
+[manager GET:@"/projects" parameters:nil class:[ProjectListDto class] success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        ProjectListDto *projectListDto = (ProjectListDto *)responseObject;
-        onComplete(projectListDto);
+    ProjectListDto *projectListDto = (ProjectListDto *)responseObject;
+    onComplete(projectListDto);
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        onError(error);
-    }];
+} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    onError(error);
+}];
 ````
 
 
