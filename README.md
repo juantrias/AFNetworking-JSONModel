@@ -1,8 +1,16 @@
 AFNetworking-JSONModel
 ======================
+
+**WARNING**: This can be considered as a pre-release library. Breaking changes to the API may be added in the near future.
+
 This is a tiny AFNetworking (https://github.com/AFNetworking/AFNetworking) extension to simplify the integration with the JSONModel parsing library (https://github.com/icanzilb/JSONModel).
 
 In every service we pass to our AFHTTPRequestOperationManager+JsonModelRequestOperationManager category the JSONModel class we expect to receive as the API response. Any other response is automatically redirected to the same error callback we use for networking errors, so we move away the JSON error control code from every ApiClient service, making it generic.
+
+To install use Cocoa Pods. WARNING: The repo URL may change in the future. This can be considered as a pre-release library and is not already published in the CocoaPods Master Repo
+````ruby
+pod 'AFNetworking-JSONModel', :git => 'https://github.com/IGZjuantrias/AFNetworking-JSONModel.git'
+````
 
 Initialize the AFHTTPRequestOperationManager:
 ````objective-c
