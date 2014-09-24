@@ -3,6 +3,7 @@
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,8 +17,105 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCC-ix-eh1">
+                                <rect key="frame" x="24" y="54" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Department:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c11-5n-MXK">
+                                <rect key="frame" x="24" y="82" width="96" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzA-fS-b29">
+                                <rect key="frame" x="125" y="54" width="124" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee department" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MS7-tj-9ys">
+                                <rect key="frame" x="125" y="82" width="170" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Nve-3A-5n3">
+                                <rect key="frame" x="24" y="162" width="552" height="421"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmployeeCell" id="DeY-1g-0oX" customClass="EmployeeCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DeY-1g-0oX" id="cGJ-yv-qJ7">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Employee name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcb-TE-JA6">
+                                                    <rect key="frame" x="17" y="11" width="275" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="xcb-TE-JA6" id="fNZ-Y9-YFY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="JdN-1R-tTP"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Department employees:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNq-cv-4r0">
+                                <rect key="frame" x="24" y="121" width="192" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="qbW-X8-OYb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nNq-cv-4r0" firstAttribute="top" secondItem="c11-5n-MXK" secondAttribute="bottom" constant="18" id="3vF-kA-BsO"/>
+                            <constraint firstItem="MS7-tj-9ys" firstAttribute="leading" secondItem="c11-5n-MXK" secondAttribute="trailing" constant="6" id="6z2-FC-MxM"/>
+                            <constraint firstItem="cCC-ix-eh1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="8" id="8Ow-EI-dwR"/>
+                            <constraint firstItem="Nve-3A-5n3" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" constant="24" id="COA-qX-R27"/>
+                            <constraint firstItem="MS7-tj-9ys" firstAttribute="top" secondItem="c11-5n-MXK" secondAttribute="top" id="Cef-Ge-xFS"/>
+                            <constraint firstItem="Nve-3A-5n3" firstAttribute="top" secondItem="nNq-cv-4r0" secondAttribute="bottom" constant="21" id="JDp-kY-sAu"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Nve-3A-5n3" secondAttribute="bottom" constant="17" id="Ldt-pn-yzO"/>
+                            <constraint firstItem="Nve-3A-5n3" firstAttribute="leading" secondItem="cCC-ix-eh1" secondAttribute="leading" id="Lvc-SZ-uhg"/>
+                            <constraint firstItem="vzA-fS-b29" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Pf3-VN-Sz0"/>
+                            <constraint firstItem="MS7-tj-9ys" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="R4W-pb-cbz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nve-3A-5n3" secondAttribute="trailing" constant="8" id="SFu-EX-FAa"/>
+                            <constraint firstItem="cCC-ix-eh1" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="34" id="Tzg-kv-zr2"/>
+                            <constraint firstItem="c11-5n-MXK" firstAttribute="top" secondItem="cCC-ix-eh1" secondAttribute="bottom" constant="8" id="VXM-6z-riR"/>
+                            <constraint firstItem="cCC-ix-eh1" firstAttribute="leading" secondItem="c11-5n-MXK" secondAttribute="leading" id="XLa-RU-NJ2"/>
+                            <constraint firstItem="nNq-cv-4r0" firstAttribute="leading" secondItem="cCC-ix-eh1" secondAttribute="leading" id="Xlw-uo-gZr"/>
+                            <constraint firstItem="MS7-tj-9ys" firstAttribute="leading" secondItem="vzA-fS-b29" secondAttribute="leading" id="mNJ-Xb-CM5"/>
+                            <constraint firstItem="vzA-fS-b29" firstAttribute="top" secondItem="cCC-ix-eh1" secondAttribute="top" id="rnY-G6-VEQ"/>
+                            <constraint firstItem="MS7-tj-9ys" firstAttribute="leading" secondItem="c11-5n-MXK" secondAttribute="trailing" constant="6" id="sZY-g7-GM4"/>
+                            <constraint firstItem="MS7-tj-9ys" firstAttribute="leading" secondItem="c11-5n-MXK" secondAttribute="trailing" constant="7" id="vgy-xQ-lI2"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Pf3-VN-Sz0"/>
+                                <exclude reference="R4W-pb-cbz"/>
+                                <exclude reference="sZY-g7-GM4"/>
+                                <exclude reference="vgy-xQ-lI2"/>
+                                <exclude reference="COA-qX-R27"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="departmentEmployeesTableView" destination="Nve-3A-5n3" id="VSA-Bs-UHz"/>
+                        <outlet property="departmentLabel" destination="MS7-tj-9ys" id="xUN-uk-LCe"/>
+                        <outlet property="nameLabel" destination="vzA-fS-b29" id="gsM-47-WY2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

@@ -16,6 +16,7 @@
 		0DCD247E19D2CE660013B738 /* AFNetworking_JSONModel_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD247D19D2CE660013B738 /* AFNetworking_JSONModel_ExampleTests.m */; };
 		0DCD248A19D2D5730013B738 /* EmployeeJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD248919D2D5730013B738 /* EmployeeJSONModel.m */; };
 		0DCD248D19D2D5D40013B738 /* DepartmentJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD248C19D2D5D40013B738 /* DepartmentJSONModel.m */; };
+		0DCD249219D2DBFE0013B738 /* EmployeeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD249119D2DBFE0013B738 /* EmployeeCell.m */; };
 		8595DA0BCEF64EDE8A40A6D4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B0627432F44FBB9F63A8FD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,8 @@
 		0DCD248919D2D5730013B738 /* EmployeeJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeJSONModel.m; sourceTree = "<group>"; };
 		0DCD248B19D2D5D40013B738 /* DepartmentJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartmentJSONModel.h; sourceTree = "<group>"; };
 		0DCD248C19D2D5D40013B738 /* DepartmentJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartmentJSONModel.m; sourceTree = "<group>"; };
+		0DCD249019D2DBFE0013B738 /* EmployeeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeCell.h; sourceTree = "<group>"; };
+		0DCD249119D2DBFE0013B738 /* EmployeeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeCell.m; sourceTree = "<group>"; };
 		4DD23548E59244978B6E0C8D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D7B0627432F44FBB9F63A8FD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -93,11 +96,11 @@
 		0DCD246019D2CE650013B738 /* AFNetworking-JSONModel Example */ = {
 			isa = PBXGroup;
 			children = (
+				0DCD248F19D2DBCB0013B738 /* View Controller */,
+				0DCD248E19D2DBB80013B738 /* Cell */,
 				0DCD248719D2D54D0013B738 /* JSON Model */,
 				0DCD246519D2CE650013B738 /* AppDelegate.h */,
 				0DCD246619D2CE650013B738 /* AppDelegate.m */,
-				0DCD246819D2CE650013B738 /* ViewController.h */,
-				0DCD246919D2CE650013B738 /* ViewController.m */,
 				0DCD246B19D2CE650013B738 /* Main.storyboard */,
 				0DCD246E19D2CE650013B738 /* Images.xcassets */,
 				0DCD247019D2CE650013B738 /* LaunchScreen.xib */,
@@ -141,6 +144,24 @@
 				0DCD248C19D2D5D40013B738 /* DepartmentJSONModel.m */,
 			);
 			name = "JSON Model";
+			sourceTree = "<group>";
+		};
+		0DCD248E19D2DBB80013B738 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0DCD249019D2DBFE0013B738 /* EmployeeCell.h */,
+				0DCD249119D2DBFE0013B738 /* EmployeeCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		0DCD248F19D2DBCB0013B738 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0DCD246819D2CE650013B738 /* ViewController.h */,
+				0DCD246919D2CE650013B738 /* ViewController.m */,
+			);
+			name = "View Controller";
 			sourceTree = "<group>";
 		};
 		2E3314A1E3AC40CA923934C1 /* Frameworks */ = {
@@ -289,6 +310,7 @@
 				0DCD246A19D2CE650013B738 /* ViewController.m in Sources */,
 				0DCD248A19D2D5730013B738 /* EmployeeJSONModel.m in Sources */,
 				0DCD248D19D2D5D40013B738 /* DepartmentJSONModel.m in Sources */,
+				0DCD249219D2DBFE0013B738 /* EmployeeCell.m in Sources */,
 				0DCD246719D2CE650013B738 /* AppDelegate.m in Sources */,
 				0DCD246419D2CE650013B738 /* main.m in Sources */,
 			);

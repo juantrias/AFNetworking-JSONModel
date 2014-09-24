@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  EmployeeCell.h
 //  AFNetworking-JSONModel Example
 //
 //  Created by Juan on 24/09/14.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController<UITableViewDataSource>
+@interface EmployeeCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end
-
