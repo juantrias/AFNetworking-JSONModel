@@ -56,7 +56,6 @@ Calling the /projects service with AFNetworking+JSONModel:
 
 TODO
 ===
-- Test with the newest AFNetworking & JSONModel versions and update dependecies
 - NSURLSession compatibility.
 - Ability to parse JSON arrays as the root object. ¿Is it acceptable to have JSON arrays not wrapped in a JSON object in a REST API?
 - Serialize requests with path params. We have to take into account that we can have body params and path params in the same request and we only have a "params" parameter. Add a new pathParams parameter? In Java some libs like Retrofit solve this problem using annotations to differenciate path params, query params and body params: @Path("paramName") param, @Query("paramName") param, @Body object.
