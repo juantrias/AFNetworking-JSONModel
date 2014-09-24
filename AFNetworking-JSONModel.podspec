@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "AFNetworking-JSONModel"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A tiny AFNetworking extension to simplify the integration with the JSONModel parsing library"
 
   s.description  = <<-DESC
@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   # s.license      = "MIT"
   
-  
+
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  Specify the authors of the library, with email addresses. Email addresses
@@ -71,7 +71,7 @@ Pod::Spec.new do |s|
   #  Specify the location from where the source should be retrieved.
   #  Supports git, hg, bzr, svn and HTTP.
   #
-  s.source       = { :git => "https://github.com/IGZjuantrias/AFNetworking-JSONModel.git", "tag" => "0.0.1" }
+  s.source       = { :git => "https://github.com/IGZjuantrias/AFNetworking-JSONModel.git", "tag" => "0.0.2" }
   #s.source       = { :git => "http://EXAMPLE/AFNetworking-JSONModel.git", :tag => "0.0.1" }
 
 
