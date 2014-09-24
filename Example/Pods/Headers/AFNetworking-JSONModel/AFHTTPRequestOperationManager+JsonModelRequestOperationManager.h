@@ -1,0 +1,1 @@
+../../../../Classes/AFHTTPRequestOperationManager+JsonModelRequestOperationManager.h
